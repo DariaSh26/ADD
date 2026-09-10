@@ -2342,3 +2342,6 @@ import a
 #         cur.executescript(sql)
 
 
+
+print("Изменения после коммита")
+
