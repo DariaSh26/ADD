@@ -333,8 +333,8 @@ import a
 
 
 # 7 урок
-
-
+#
+#
 # import random
 #
 #

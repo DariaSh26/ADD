@@ -347,18 +347,18 @@
 # for i in range(1, 11):
 #     print(1, "в кубе =", cube(i))
 
-def change(lst):
-    # last =lst.pop()
-    # first = lst.pop(0)
-    # lst.insert(0,last)
-    # lst.append(first)
-    lst[0], lst[-1] = lst[-1], lst[0]
-    return lst
-
-
-print(change([1,2,3]))
-print(change([9, 12, 33,54, 105]))
-print(change(["с", "л","о", "н"]))
+# def change(lst):
+#     # last =lst.pop()
+#     # first = lst.pop(0)
+#     # lst.insert(0,last)
+#     # lst.append(first)
+#     lst[0], lst[-1] = lst[-1], lst[0]
+#     return lst
+#
+#
+# print(change([1,2,3]))
+# print(change([9, 12, 33,54, 105]))
+# print(change(["с", "л","о", "н"]))
 
 
 
