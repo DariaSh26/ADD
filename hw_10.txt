@@ -1,0 +1,89 @@
+Создание массивов и атрибуты
+
+1. Диапазон: 
+         import numpy as np
+
+         arr = np.arange(10, 50, 5)
+         print(arr)
+
+2. Случайные числа: 
+         
+          d = np.random.randint(0, 10, (3, 4))
+          print(d)
+          print("Форма (shape):", d.shape)
+          print("Размер (size):", d.size)
+          print("Тип данных (dtype):", d.dtype)
+
+
+Индексация и срезы
+
+3. Замена элементов: 
+
+          arr = np.arange(1, 17).reshape(4, 4)
+          print(arr)
+
+          arr[0, :] = 0
+          print("\nПосле замены:\n", arr)
+
+
+Математические операции:
+
+4.  a = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+    print(a)
+
+    total = a.sum()
+    print("Сумма всех элементов:", total)
+
+    col_means = a.mean(axis=0)
+    print("Среднее по столбцам:", col_means)
+
+    row_means = a.mean(axis=1)
+    print("Среднее по строкам:", row_means)
+
+5.  a = np.array([8500, 12000, 4300, 9100, 11500, 15000, 6000])
+    print(a)
+
+    min_steps= a.min()
+    print(f"Минимум шагов: {min_steps}")
+
+    max_steps = a.max()
+    print(f"Максимум шагов: {max_steps}")
+
+    total_steps = a.sum()
+    print(f"Всего за неделю: {total_steps}")
+
+
+6.  temps = np.array([18.2, 19.5, 21.0, 17.8, 16.5, 23.1, 24.5, 20.0, 19.1, 18.0, 22.4, 25.0, 15.8, 17.2])
+
+    mean_t = np.mean(temps)
+    print(f"Среднее: {mean_t:.2f}")
+
+    median_t = np.median(temps)
+    print(f"Медиана: {median_t:.2f}")
+
+    std_t = np.std(temps)
+    print(f"Стандартное отклонение: {std_t:.2f}")
+
+    var_all = np.var(temps)
+    print(f"Дисперсия: {var_all:.2f}")
+
+
+
+7.  salaries = np.array([30, 35, 40, 45, 300])
+
+    mean_sal = np.mean(salaries)
+    print(f"Средняя зарплата: {mean_sal}")
+
+    median_sal = np.median(salaries)
+    print(f"Медиана зарплат: {median_sal}")
+
+    Медиана показывает лучше реальную ситуацию обычных сотрудников.
+
+
+8.  prices = np.array([150, 142, 165, 139, 155])
+
+    min_day_idx = np.argmin(prices)
+    print(f"Индекс дня с минимальной ценой: {min_day_idx}")
+
+    max_day_idx = np.argmax(prices)
+    print(f"Индекс дня с максимальной ценой: {max_day_idx}")

@@ -5,7 +5,6 @@ from textwrap import wrap
 
 import a
 
-
 # print(dir(list))                             # Добавление переменных в список
 # a = [7, 9, 2, 1, 3, 8]
 # print(a)
@@ -35,8 +34,6 @@ import a
 #     c.append(b[i])
 #
 # print(c)
-
-
 
 
 # a = [7, 9, 2, 1, 3, 8]         #Удаление переменных в списке
@@ -73,9 +70,6 @@ import a
 # print(a)
 
 
-
-
-
 # a = [7, 9, 2, 1, 3, 8]
 # print(a)
 
@@ -85,9 +79,6 @@ import a
 # lst = list(reversed(a))
 # print(lst)
 # print(a)
-
-
-
 
 
 # a = [7, 9, 2, 1, 3, 8]
@@ -102,12 +93,6 @@ import a
 # new_lst = sorted(lst)
 # print(new_lst)
 # print(lst)
-
-
-
-
-
-
 
 
 # import random
@@ -135,8 +120,6 @@ import a
 # print(randrange(1, 10))
 
 
-
-
 # import random as rnd
 #
 # # city_list = ["Москва", "Новосибирск", "Воронеж", "Сочи", "Екатеринбург"]
@@ -149,13 +132,11 @@ import a
 # print(lst)
 
 
-
 # lst = [5, 3, 2, 4, 1]
 # print(len(lst))
 # print(min(lst))
 # print(max(lst))
 # print(sum(lst))
-
 
 
 # import random
@@ -169,10 +150,7 @@ import a
 # print(lst)
 
 
-
-
-
-#матрицы
+# матрицы
 
 # matrix = [
 #     [1, 2, 3, 4],
@@ -184,7 +162,7 @@ import a
 # print(matrix[1][2])
 
 
-#=====================================
+# =====================================
 
 # matrix = [
 #     [1, 2, 3, 4],
@@ -203,12 +181,6 @@ import a
 #     for col in row:
 #      print(col, end ="\t)
 #      print()
-
-
-
-
-
-
 
 
 #
@@ -237,7 +209,6 @@ import a
 # n = 3
 # m = 6
 # get_sum(n, m)
-
 
 
 # def get_sum(a, b):
@@ -281,11 +252,7 @@ import a
 # print(change(["с", "л", "о", "н"]))
 
 
-
-
-#6 урок
-
-
+# 6 урок
 
 
 # board = [" "] * 9   #[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
@@ -329,9 +296,6 @@ import a
 #     player = "0" if player == "X" else "X"
 
 
-
-
-
 # 7 урок
 #
 #
@@ -352,8 +316,6 @@ import a
 # print("0 =",tpl3.count(0))
 
 
-
-
 # countries = (
 #     ("Германия", 80.2, (("Берлин", 3.326), ("Гамбург", 1.718))),
 #     ("Франция", 66, (("Париж", 2.2), ("Марсель", 1.6))),
@@ -367,7 +329,6 @@ import a
 #     for city in cities:
 #         cityName, cityPopulation = city
 #         print("\tГород: ", cityName, ", население = ", cityPopulation, sep="")
-
 
 
 # tpl = tuple(input("Введите данные: "))
@@ -431,8 +392,6 @@ import a
 # print(users)
 
 
-
-
 # a = {0, 1, 2, 3}
 # b = {4, 3, 2, 1}
 # c = a.union(b)    # с = a | b - тоже самое
@@ -485,7 +444,6 @@ import a
 # print(a > b)
 
 
-
 # drawing = {"марина", "Женя", "Света"}
 # music = {"Костя", "Женя", "Илья"}
 #
@@ -504,9 +462,6 @@ import a
 # print(s)
 
 
-
-
-
 # 8 урок   словарь
 
 
@@ -515,7 +470,6 @@ import a
 #
 # del d["one"]
 # print(d)
-
 
 
 # print("список" in d)
@@ -555,7 +509,6 @@ import a
 # print(d["two"])
 # d["two"] = 2 ** 4
 # print(d)
-
 
 
 # d = {"x1": 3, "x2": 7, "x3": 5, "x4": -1}
@@ -612,10 +565,6 @@ import a
 #     print(i, ")", goods[i][0], " - " , goods[i][1], "шт. по ", goods[i][2], "руб",  sep="")
 
 
-
-
-
-
 # d = {"one": 1, "two": 2, "three": 3}
 #
 # # print(d.keys())    dict_keys(['one', 'two', 'three'])
@@ -628,11 +577,6 @@ import a
 # # value = d["four"]
 # value = d.get (key: "four", default: "Такого ключа нет")
 # print(value)
-
-
-
-
-
 
 
 # d = {"one": 1, "two": 2, "three": 3}
@@ -657,8 +601,6 @@ import a
 
 # d1 = dict.fromkeys(['a', 'b', 'c', 'd'], 100)
 # print(d1)
-
-
 
 
 # d = {"one": 1, "two": 2, "three": 3}
@@ -699,7 +641,6 @@ import a
 # print(new_d)
 
 
-
 # d = {'name': 'Kelly', 'age': 25, 'salary': 8000, 'city': "New York"}
 # d["location"] = d.pop("city")
 # print(d)
@@ -727,7 +668,6 @@ import a
 #         print("\t", i, ":", j, sep="")
 
 
-
 # d = {"one": 1, "two": 2, "three": 3}           # генератор словарей, поменять местами
 # print(d)
 #
@@ -735,9 +675,7 @@ import a
 # print(new_d)
 
 
-
-
-#9 урок
+# 9 урок
 
 
 # lst = [1, 2, 3, 4]
@@ -750,7 +688,6 @@ import a
 # print(list(zip([1,2,3])))
 
 
-
 # one = {'name': 'Igor', 'surname': 'Vetrov', 'age': 26}               #распаковка кортежей
 # two = {'name': 'Irina', 'surname': 'Petrova', 'age': 20}
 #
@@ -761,8 +698,7 @@ import a
 # print(list(zip(one.items(), two.items())))
 
 
-
-#распаковка словаря
+# распаковка словаря
 
 # one = {'one': 1, 'two': 2}
 # two = {'three': 3, 'four': 4}
@@ -779,9 +715,6 @@ import a
 #
 # print(func(1))
 # print(func(1,2,3, 'abc'))
-
-
-
 
 
 # def average(*args):
@@ -854,7 +787,6 @@ import a
 #
 # for name in names:
 #     print(name)
-
 
 
 # def func(a):
@@ -939,7 +871,6 @@ import a
 # print(func())
 
 
-
 #  ДЗ
 
 
@@ -978,8 +909,6 @@ import a
 # print((lambda *args: sum(args))(1,2,3,4))
 
 
-
-
 # tpl = (
 #     lambda x: x * 2,
 #     lambda x: x * 3,
@@ -988,10 +917,6 @@ import a
 #
 # for t in tpl:
 #     print(t("abc"))
-
-
-
-
 
 
 # def outer(n):             # 1 способ
@@ -1021,7 +946,6 @@ import a
 # print((lambda n: lambda x: x + n)(42) (0))     # 4 способ
 
 
-
 # def values(i):                   # lambda выражение в кортеже
 #     return i[1]
 #
@@ -1033,7 +957,6 @@ import a
 # print(lst)
 # print(lst)
 # print(dict(lst))
-
 
 
 # lst = [                                     # lambda выражение в списке
@@ -1048,7 +971,6 @@ import a
 # print(lst[1](x=12, y=5))
 
 
-
 # d = {                                                # lambda выражение в словаре
 #     1: lambda: print('Понедельник'),
 #     2: lambda: print('Вторник'),
@@ -1058,7 +980,6 @@ import a
 # }
 #
 # d[3]()
-
 
 
 #
@@ -1075,7 +996,6 @@ import a
 #
 # lst = [2, 8, 12, -5, -10]
 # print(list(map(mult, lst)))
-
 
 
 # map(func, *iterables)
@@ -1109,7 +1029,6 @@ import a
 
 # lst = [66, 98, 68, 59, 76, 60, 88, 74, 81, 65]
 # print(list(filter(lambda s: s > 75, lst)))
-
 
 
 # Декораторы
@@ -1148,9 +1067,6 @@ import a
 # test()
 
 
-
-
-
 #
 # def my_decorator(func):           # декорирующая функция
 #     def wrapper():
@@ -1173,8 +1089,6 @@ import a
 # hello()
 
 
-
-
 # def circle(fn):
 #     def wrap():
 #         return "(" + fn() + ")"
@@ -1194,14 +1108,6 @@ import a
 
 #
 # print(expression())
-
-
-
-
-
-
-
-
 
 
 #
@@ -1227,10 +1133,6 @@ import a
 # hello()
 
 
-
-
-
-
 # def args_decorator(func):
 #     def wrap(arg1, arg2):
 #         func(arg1, arg2)
@@ -1245,10 +1147,6 @@ import a
 #
 #
 # full_name("Ирина", "Ветрова")
-
-
-
-
 
 
 # def args_decorator(func):
@@ -1268,10 +1166,6 @@ import a
 #
 # full_name("Ирина", "Борис", "светлана", study="JavaScript")
 # full_name("Владимир", "Екатерина", "Виктор")
-
-
-
-
 
 
 # def multiply(arg):
@@ -1308,12 +1202,7 @@ import a
 # summa(2,3,3,4)
 
 
-
-
-
-
 # 11 урок
-
 
 
 #
@@ -1424,7 +1313,6 @@ import a
 #     print(f"{name[0]}")
 
 
-
 # my_str = "Test string for me "
 # arr = [ord(x) for x in my_str]
 # print("ASCII коды:", arr)
@@ -1459,10 +1347,6 @@ import a
 #
 #
 # print("Ваш случайный пароль:", random_password())
-
-
-
-
 
 
 # print(dir(str))
@@ -1555,7 +1439,6 @@ import a
 # f.close()
 
 
-
 # f = open("text.txt")
 # try:
 #     print(f.read())
@@ -1634,8 +1517,6 @@ import a
 # f.close()
 
 
-
-
 # f = open("text.txt","r")
 # print(f.read(3))
 # print(f.tell())
@@ -1673,7 +1554,6 @@ import a
 # print(sum(nums_list))
 
 
-
 # def longest_words(file):
 #     with open(file, encoding ="UTF-8") as f:
 #          w = f.read().split()
@@ -1701,7 +1581,6 @@ import a
 #         fw.write(line)
 
 
-
 # import pickle
 #
 # # file_name = "basket.txt"
@@ -1721,7 +1600,6 @@ import a
 #
 # load_shop = pickle.loads(shop)
 # print(load_shop)
-
 
 
 # import json
@@ -1836,7 +1714,6 @@ import a
 #     print(f"Всего в файле {count} строки.")
 
 
-
 # with open("data.csv") as f:                                         # 2
 #     file_reader = csv.DictReader(f, delimiter=';')
 #     count = 0
@@ -1856,8 +1733,6 @@ import a
 #             print(f"Файл содержит столбцы: {','.join(row)}")
 #         print(f"\t{row['Имя']} - {row['Профессия']}. Родился в {row['Год рождения']} году.")
 #         count += 1
-
-
 
 
 # import csv
@@ -1892,8 +1767,6 @@ import a
 #     file_writer.writerow({"Имя": "Вова", "Возраст": 14})
 
 
-
-
 # data = [{
 #     'hostname': 'sw1',
 #     'location': 'London',
@@ -1924,8 +1797,6 @@ import a
 #
 
 
-
-
 # import csv
 # import requests
 #
@@ -1942,21 +1813,11 @@ import a
 # print()
 
 
-
 # import random
 # print(2.1 == random.uniform(2.1, 2.1))
 
 
-
-
-
-
-
-
-
-
-
-#База данных
+# База данных
 
 
 # import sqlite3
@@ -1978,38 +1839,34 @@ import a
 #     cur.execute("DROP TABLE IF EXISTS users")   # удалить бд
 
 
-
-
 # import sqlite3
 #
 # with sqlite3.connect('users.db') as con:
 #     cur = con.cursor()
-    # cur.execute('''CREATE TABLE IF NOT EXISTS person(
-    #     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    #     name TEXT NOT NULL,
-    #     phone BLOB DEFAULT "+79990000000",
-    #     age INTEGER NOT NULL CHECK (age >= 0 AND age <= 100),
-    #     email TEXT UNIQUE NOT NULL
-    # )''')
-    # cur.execute('''
-    # ALTER TABLE person_table
-    # ADD COLUMN address TEXT
-    # ''')
-    # cur.execute('''
-    # ALTER TABLE person_table
-    # ADD COLUMN surname TEXT NOT NULL DEFAULT "fio"
-    # ''')
+# cur.execute('''CREATE TABLE IF NOT EXISTS person(
+#     id INTEGER PRIMARY KEY AUTOINCREMENT,
+#     name TEXT NOT NULL,
+#     phone BLOB DEFAULT "+79990000000",
+#     age INTEGER NOT NULL CHECK (age >= 0 AND age <= 100),
+#     email TEXT UNIQUE NOT NULL
+# )''')
+# cur.execute('''
+# ALTER TABLE person_table
+# ADD COLUMN address TEXT
+# ''')
+# cur.execute('''
+# ALTER TABLE person_table
+# ADD COLUMN surname TEXT NOT NULL DEFAULT "fio"
+# ''')
 
-    # cur.execute('''
-    # ALTER TABLE person_table
-    # RENAME COLUMN address TO home_address
-    # ''')
+# cur.execute('''
+# ALTER TABLE person_table
+# RENAME COLUMN address TO home_address
+# ''')
 
-    # cur.execute('''
-    # DROP TABLE person_table
-    # ''')
-
-
+# cur.execute('''
+# DROP TABLE person_table
+# ''')
 
 
 # import sqlite3
@@ -2033,10 +1890,9 @@ import a
 #
 #     res = cur.fetchall()
 #     print(res)
-    #
-    # for res in cur:
-    #     print(res)
-
+#
+# for res in cur:
+#     print(res)
 
 
 # import sqlite3           # создание таблицы
@@ -2054,7 +1910,6 @@ import a
 #         company_id INTEGER DEFAULT 1,
 #         FOREIGN KEY (company_id) REFERENCES companies (id) ON DELETE SET DEFAULT
 #     )""")
-
 
 
 #
@@ -2144,8 +1999,6 @@ import a
 #         )''')
 
 
-
-
 # import sqlite3
 
 # auto = [
@@ -2168,23 +2021,23 @@ import a
 #     UPDATE cars SET price = price +100;
 #     """)
 
-    # cur.execute("UPDATE cars SET price = :Price WHERE model LIKE 'B%'", {'Price': 0})
+# cur.execute("UPDATE cars SET price = :Price WHERE model LIKE 'B%'", {'Price': 0})
 
-    # cur.executemany("INSERT INTO cars VALUES (NULL,?,?)", auto)
+# cur.executemany("INSERT INTO cars VALUES (NULL,?,?)", auto)
 
-    #
-    # for car in auto:
-    #     cur.execute("INSERT INTO cars VALUES (NULL,?,?)", car)
+#
+# for car in auto:
+#     cur.execute("INSERT INTO cars VALUES (NULL,?,?)", car)
 
-    # cur.execute("INSERT INTO cars VALUES(1, 'Renault', 22000)")
-    # cur.execute("INSERT INTO cars VALUES(2, 'Volvo', 29000)")
-    # cur.execute("INSERT INTO cars VALUES(3, 'Mercedes', 57000)")
-    # cur.execute("INSERT INTO cars VALUES(4, 'Bentley', 35000)")
-    # cur.execute("INSERT INTO cars VALUES(5, 'Audi', 52000)")
+# cur.execute("INSERT INTO cars VALUES(1, 'Renault', 22000)")
+# cur.execute("INSERT INTO cars VALUES(2, 'Volvo', 29000)")
+# cur.execute("INSERT INTO cars VALUES(3, 'Mercedes', 57000)")
+# cur.execute("INSERT INTO cars VALUES(4, 'Bentley', 35000)")
+# cur.execute("INSERT INTO cars VALUES(5, 'Audi', 52000)")
 
 
-    # con.commit()
-    # con.close()
+# con.commit()
+# con.close()
 
 
 # import sqlite3
@@ -2209,9 +2062,6 @@ import a
 # finally:
 #     if con:
 #         con.close()
-
-
-
 
 
 # import sqlite3
@@ -2255,7 +2105,6 @@ import a
 # cur.execute('INSERT INTO cost VALUES ("Федор", ?, ?)', (last_id, by_car_id))
 
 
-
 # import sqlite3
 #
 # with sqlite3.connect('cars.db') as con:
@@ -2279,9 +2128,6 @@ import a
 #     # print(cur.fetchmany(5))
 #     #
 #     # print(cur.fetchall())
-
-
-
 
 
 # создание таблицы с изображением
@@ -2342,12 +2188,16 @@ import a
 #         cur.executescript(sql)
 
 
-
 # print("Изменения после коммита")
 
 # print("Hello World")
 
 
+
+
+
+
+#======================================
 # Библиотека Numpy
 
 # import numpy as np
@@ -2374,7 +2224,7 @@ import a
 # print(arr.shape)
 # print(arr2.shape)
 
-#общее количество элементов
+# общее количество элементов
 # print(arr.size)
 # print(arr2.size)
 
@@ -2396,86 +2246,114 @@ import a
 # ones = np.ones((2,3))
 # print(ones)
 
-# mas = np.full((2,3), 5)
-# print(mas)
 
-# d = np.random.randint(-5,10, size=(3,4))
+# mas = np.full((2,3), 5)                      # в результате будет [5 5 5]
+# print(mas)                                                        [5 5 5]
+
+
+# d = np.random.randint(-5,10, size=(3,4))     # формируются случайные числа
 # print(d)
 
-# d = np.linspace(0,10,5)
-# d = np.arange(0,10,3)
+# d = np.linspace(0,10,5)                      # получение массива с равномерно распредлен числами, вещественные числа
+# print(d)
+
+# d = np.arange(0,10,3)                        # получение массива в заданном диапазоне [0 3 6 9]
 # print(d)
 
 
-# arr = np.arange(1,13)
+# arr = np.arange(1,13)                        # получение одномерного массива
 # print(arr)
 #
-# two = np.reshape(arr,(3,4))
+# two = np.reshape(arr,(3,4))                 # предыдущий массив преобразовать в двумерный массив
 # print(two)
 
-
-# arr1 = np.array([1, 2, 3])
+# ==================
+# arr1 = np.array([1, 2, 3])            # объеденение массивов по горизонтали и вертикали
 # arr2 = np.array([4, 5, 6])
 #
-# hstack = np.hstack((arr1, arr2))
+# hstack = np.hstack((arr1, arr2))      # одномерный массив по горизонтали
 # print(hstack)
 #
-# vstack = np.vstack((arr1, arr2))
+# vstack = np.vstack((arr1, arr2))      # двумерный массив
 # print(vstack)
+# =========================
+
 
 # arr1 = np.array([1, 2, 3, 4])
 # print(arr1)
-# print(arr1 + 3)
+# print(arr1 + 3)                    #  к массиву добавили +3
 # print(arr1 - 2)
 # print(arr1 * 2)
 # print(arr1 ** 2)
+# ============================
+
 
 # a = np.array([[1,2], [3,4]])
 # b = np.array([[2,2], [2,2]])
 #
 # print(a + b)
 # print(a * b)
+# =============================
+
 
 # a = np.array([[1,2,3], [4,5,6]])
 # print(a)
 
-# total = a.sum()
+# total = a.sum()             # общая сумма всех элементов массива
 # print(total)
 #
-# col = a.sum(axis=0)
-# print(col)
+# col = a.sum(axis=0)          # возращает сумму столбцов (1+4, 2+3б 3+9)
+# print(col)                         axis - первая ось соответствует вниз как по строкам, но идет по стобцам
 #
-# row = a.sum(axis=1)
+# row = a.sum(axis=1)         # получили сумму в пределах строки
 # print(row)
+# =======================================
 
-# mean_all = a.mean()
+# a = np.array([[1,2,3], [4,5,6]])
+# print(a)
+
+# mean_all = a.mean()             # среднее арифметическое полностью по всем элементам массива (сложились все элементы и разделились на 6)
 # print(mean_all)
 #
-# mean_0 = a.mean(axis=0)
+# mean_0 = a.mean(axis=0)        # среднее ариф- ое 1+4 / 2 = 2,5, 2+5/2 = 3,5, 3+6/2 = 4,5 (по столбцу)
 # print(mean_0)
 #
-# mean_1 = a.mean(axis=1)
+# mean_1 = a.mean(axis=1)       # среднее арифм по строке
 # print(mean_1)
+# ==============================
+
+
+# a = np.array([[1,2,3], [4,5,6]])
+# print(a)
 
 # min_all = a.min()
 # print(min_all)
-# min_0 = a.min(axis=0)
+
+# min_0 = a.min(axis=0)        # выбирает мин значение по оси, результат будет [1, 2, 3] в пределах столбцов
 # print(min_0)
-# min_1 = a.max(axis=1)
+
+# min_1 = a.max(axis=1)       # в пределах строк
 # print(max_1)
-
-
-# arg_max = a.argmax()
+# ==================================
+#
+# a = np.array([[1, 2, 3], [4, 5, 6]])
+# print(a)
+#
+# arg_max = a.argmax()       # индекс на котором находится макс значение
 # print(arg_max)
-#
-# arg_0 = a.argmax(axis=0)
+
+# arg_0 = a.argmax(axis=0)   # индекс по оси столбца
 # print(arg_0)
-#
-# arg_1 = a.argmin(axis=1)
+
+# arg_1 = a.argmin(axis=1)   # индекс по строке
 # print(arg_1)
+# ======================================
 
 
-# prod_all = a.prod()
+# a = np.array([[1, 2, 3], [4, 5, 6]])
+# print(a)
+
+# prod_all = a.prod()            # находить произведение элементов
 # print(prod_all)
 #
 # prod_0 = a.prod(axis=0)
@@ -2484,7 +2362,7 @@ import a
 # prod_1 = a.prod(axis=1)
 # print(prod_1)
 #
-# var_all = a.var()
+# var_all = a.var()             # определение дисперсии (в теме анализ есть пункт дисперсия)
 # print(var_all)
 #
 # var_0 = a.var(axis=0)
@@ -2492,33 +2370,33 @@ import a
 #
 # var_1 = a.var(axis=1)
 # print(var_1)
+# ===========================================
 
-# arr1 = np.array([1,5,20])
+
+# arr1 = np.array([1,5,20])          # нахождение медианы
 # print(arr1)
 # print(np.median(arr1))
 
 # arr1 = np.array([2, 4, 1, 10])
-# arr1 = np.array([2, 4, 1, 10])
 # print(arr1)
 # print(np.median(arr1))
 
+# ===============================
 
-# arr = np.array([[1, 2, 3], [2, 3, 4], [3, 4, 5], [4, 5, 6]])
-# arr = np.array([2, 4, 4, 4, 6])
+# arr = np.array([[1, 2, 3], [2, 3, 4], [3, 4, 5], [4, 5, 6]])    # стандартное отклонение
+# # arr = np.array([2, 4, 4, 4, 6])
 # print(arr)
 # print(np.std(arr, axis=0))
+# ================================================
 
 
-
-
-
-
+# анализ данных по зп сотрудников компании
 
 # salaries = np.array([50, 23, 60, 26, 19, 43, 26, 64, 60, 45, 26, 57, 54])
 # print(salaries)
 #
 # mean_salary = np.mean(salaries)
-# print(f"Средняя зарплата: {mean_salary:.2f}")
+# print(f"Средняя зарплата: {mean_salary:.2f}")     # .2f - округление
 #
 # max_salary = np.max(salaries)
 # min_salary = np.min(salaries)
@@ -2529,11 +2407,12 @@ import a
 # print(f"Стандартное отклонение зарплаты: {std_salary:.2f}")
 #
 # above_mean = salaries[salaries > mean_salary]
-# print(f"зарплаты выше среднего: {above_mean}")
-
+# print(f"Зарплаты выше среднего: {above_mean}")
 
 
 # ========================================================
+# Анализ продаж магазина за последний месяц
+
 # product_ids = np.array([101, 102, 103, 104, 105, 106, 107, 108, 109, 110])
 # prices = np.array([10.99, 20.99, 15.49, 25.49, 5.99, 12.99, 7.99, 30.99, 18.99, 9.99])
 # quantities  = np.array([100, 50, 75, 30, 200, 120, 150, 20, 80, 110])
@@ -2546,17 +2425,19 @@ import a
 # total_sum = np.sum(total_sales)
 # print(f"Сумма выручки: {total_sum}")
 #
-# average_check = np.mean(total_sales)
+# average_check = np.mean(total_sales)                 #Средний чек по всем продажам
 # print(f"Средний чек: {average_check}")
 #
 # best_product_index = np.argmax(total_sales)
 # worst_product_index = np.argmin(total_sales)
 # print(f"Лучший товар (ID: {product_ids[best_product_index]}, объем продаж {total_sales[best_product_index]})")
 # print(f"Худший товар (ID: {product_ids[worst_product_index]}, объем продаж {total_sales[worst_product_index]})")
-#=======================================================================================
+# =======================================================================================
 
 
-import pandas as pd
+# Библиотека Pandas
+#
+# import pandas as pd
 
 # series1 = pd.Series([10,20,30,40,50])
 # print(series1)
@@ -2565,7 +2446,7 @@ import pandas as pd
 # print(series2)
 #
 # # series3 = pd.Series(15)
-# series3 = pd.Series( 10, index=[3,8,4])
+# series3 = pd.Series(10, index=[3,8,4])
 # print(series3)
 
 # age = [36, 16, 23]
@@ -2573,10 +2454,10 @@ import pandas as pd
 # series4 = pd.Series(age, index=names, name="age")
 # print(series4)
 # # print(series4[["Роман", "Вадим"]])
-# print("Размер серии:", len(series4))
-# print("Размер серии:", series4.size)
+# print("Размер серии:", len(series4))     # кол-во элементов по паитону
+# print("Размер серии:", series4.size)    # кол-во элементов по Pandas
 
-
+# =====================================================
 
 # series = pd.Series([5, 3, 5, 4, 2, 3, 2])
 #
@@ -2587,6 +2468,7 @@ import pandas as pd
 # print("Количество значений в серии\n")
 # print(value_counts)
 
+# ===================================================
 
 # age = [36, 16, 23, 29]
 # names = ["Сергей", "Роман", "Вадим", "Виталий"]
@@ -2600,8 +2482,11 @@ import pandas as pd
 # print("\nНесколько элементов по позиции:")
 # print(subset)
 
-series = pd.Series([10, 20, 30, 40, 50, 60, 70, 80, 90, 100])
-print(series)
+# ==========================================================
+
+
+# series = pd.Series([10, 20, 30, 40, 50, 60, 70, 80, 90, 100])
+# print(series)
 #
 # print("первые пять элементов:")
 # print(series.head())
@@ -2615,16 +2500,24 @@ print(series)
 # print("\nПоследние 3 элемента:")
 # print(series.tail(3))
 
-# sample_data = series.sample(3)
+# sample_data = series.sample(3)   # выведет 3 случайных значения
 # print(sample_data)
+# =============================================
 
-grades = pd.Series([90, 85, 85, 85, 70], index=["Анна","Борис", "Влад", "Дарья", "Елена"])
-print(grades)
+# заданное кол-во элементов по какому-то определнному значению
+# grades = pd.Series([90, 85, 85, 85, 70], index=["Анна","Борис", "Влад", "Дарья", "Елена"])
+# print(grades)
 #
-# print(grades.nlargest(2, keep="first"))
-# print(grades.nlargest(2, keep="last"))
+# MAX балл
+# print(grades.nlargest(2, keep="first"))       # 2 лучших студента которые получили высокий балл
+# print(grades.nlargest(2, keep="last"))        # 2 успешных студентов
 # print(grades.nlargest(2, keep="all"))
+# указываем  keep="first", "last", "all" когда есть одинаковые значения
 #
+# MIN баллы
 # print(grades.nsmallest(3, keep="first"))
 # print(grades.nsmallest(3, keep="last"))
 # print(grades.nsmallest(3, keep="all"))
+
+
+#====================================================
