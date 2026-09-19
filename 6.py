@@ -2435,6 +2435,13 @@ import a
 # =======================================================================================
 
 
+
+
+
+
+
+
+
 # Библиотека Pandas
 #
 # import pandas as pd
@@ -2521,3 +2528,207 @@ import a
 
 
 #====================================================
+
+# import pandas as pd
+#
+
+# s1 = pd.Series([1, 2, 3, 4, 5])
+# s2 = pd.Series([6, 7, 8, 9, 10])
+#
+# # s3 = s1 + s2
+# # s3 = s2 - s1
+# # s3 = s1 * s2
+# s3 = s2 / s1
+# print(s3)
+#=============================
+
+# s1 = pd.Series(["a", "b", "c", "w", "r"])
+# s2 = pd.Series(["d", "e", "f"])
+#
+# s3 = s1 + s2
+# print(s3)
+
+#==========================
+
+# s1 = pd.Series([1, 2, 3, 4, 5])
+# s2 = s1 + 5
+# print(s2)
+
+#================================
+# Фильтры данных в Pandas
+# s = pd.Series ([10, 20, 30, 40, 50])
+#
+# filtered_data = s[s >= 30]
+# print(filtered_data)
+
+# s = pd.Series(["Сергей", "Роман", "Вадим", "Виталий", "Сергей", "Вадим"])
+# filtered_data = s[s == "Сергей"]
+# print(filtered_data)
+
+
+# s = pd.Series([1, 2, 3, 5, 8, 13, 21, 34, 55, 89])
+#
+# # filtered_data = s[(s > 8) & (s < 30)]
+# filtered_data = s[(s > 8) | (s < 30)]     # False | True
+# print(filtered_data)
+
+
+# s = pd.Series(["Сергей", "Роман", "Вадим", "Виталий", "Адександр", "Артем"])        # isin
+# filtered_data = s[s.isin(["Роман", "Игорь", "Артем"])]
+# print(filtered_data)
+
+
+# s = pd.Series([1, 2, 3, 5, 8, 13, 21, 34, 55, 89])                                 # between
+# filtered_data = s[s.between(8, 30)]
+# print(filtered_data)
+
+#===========================================
+
+# s = pd.Series(['1.0', '2', 'ошибка', '4.5'])
+#
+# # res = pd.to_numeric(s, errors='coerce')
+# res = s.astype(int, errors='ignore')
+# print(res)
+
+
+#==========================================
+
+# DataFrame
+
+# data = {
+#     "Name": ["Сергей", "Анна", "Роман", "Александр"],
+#     "Age": [28, 36, 23, 42],
+#     "City": ["Сочи", "Москва", "Воронеж", "Армавир"]
+# }
+
+# df = pd.DataFrame(data)
+# print(df)
+# print("*" * 30)
+# cities = df["City"]        # получение данных  в стобце "City"
+# print(cities)
+# print("*" * 30)
+# cities = df.City           # тоже самое как и предыдущее
+# print(cities)
+# print("*" * 30)
+# columns = ["City", "Name"]      # название столбцов будет сверху
+# print(df[columns])
+# # print(df[["City", "Name"]])
+# print("*" * 30)
+# int_columns = df.select_dtypes(include="int64")
+# print(int_columns)
+
+
+# df = pd.DataFrame(data, index=['str_1', 'str_2', 'str_3', 'str_4'])
+# print(df)
+# print("*" * 30)
+# # print(df.loc['str_2'])                      # выведет 1 строку
+# # print(df.loc['str_1':'str_3'])                # строки покажет с 1 по 3, вкл последнее значение
+# # print(df.loc[['str_1','str_3']])
+# print(df.iloc[0])
+# print("*" * 30)
+# print(df.iloc[1:3])                             # не вкл 3 элемент
+
+# print(df["City"]["str_3"])
+# print("*" * 30)
+# print(df["City"][1:3])
+# print("*" * 30)
+# print(df["City"]["str_2": "str_4"])              # вкл 4 элемент
+# print("*" * 30)
+# print(df["City"][["str_1", "str_3", "str_4"]])
+
+#=============
+# 1 вариант
+# column = ["City", "Name"]
+# print(df[column][1:3])
+
+# 2 вариант такой же, но короче
+# print(df[["City", "Name"]][1:3])
+#=================================
+
+# print(df.shape)                       # показывает количество строк и кол-во столбцов
+# print(df.dtypes)                      # показывает типы данных каждого столбца
+
+
+
+
+
+# =========================
+#
+# rows = [
+#     ["ноутбук", 50000, 5],
+#     ["Смарфон", 30000, 10],
+#     ["Наушники", 5000, 5]
+# ]
+#
+# df_product = pd.DataFrame(rows, columns=['Товар', 'Цена', 'Количество'])
+# print(df_product)
+#
+# print("*" * 50)
+#
+# api_data = [
+#     {"ФИО": "Иванов И.И.", "Департамент": "IT"},
+#     {"ФИО": "Петров П.П.", "Департамент": "HR"},
+#     {"ФИО": "Сидоров С.С."}
+# ]
+#
+# df = pd.DataFrame(api_data)
+# print(df)
+
+
+#=========================================================
+
+# import numpy as np
+# import pandas as pd
+
+# data = np.array([
+#     ["Tom", 41, "Yandex"],
+#     ["Bob", 56, "VK"],
+#     ["Sam", 31, "Sberbank"]
+# ])
+#
+# columns = ["Name", "Age", "Company"]
+# df = pd.DataFrame(data, columns=columns)
+# print(df)
+
+# data = pd.read_excel("data.xlsx")              # excel
+# print(data)
+# print("*" * 50)
+# # print(data.head(3))
+# # print(data.tail(3))
+# print(data.Age.describe())
+# print("*" * 50)
+# print(data.describe())
+
+# df = pd.read_json("people.json")              # json
+# print(df)
+
+# df = pd.read_csv("internet.csv")                # csv
+# print(df)
+# print("*" * 50)
+# # print(df.sort_values("mobile", ascending=False))
+# # print(df.dropna())
+#
+# new_country = {"country": "Галактика", "broadband": 1234, "mobile": 295.45}
+# df1 = pd.DataFrame([new_country])
+# print(df1)
+# print("*" * 50)
+# new_list1 = pd.concat([df1, df], ignore_index=True)   # добавление строки
+# print(new_list1)
+# new_list1.to_csv("new_country.csv", index = False)                              # переименовать файл
+
+
+
+#================================
+
+import pandas as pd
+
+age = [16, 25, 38, 17, 42, 15]
+
+age_series = pd.Series(age)
+adults_series = age_series >= 18
+
+print("Исходный возраст:")
+print(age_series)
+print("\nРезультат проверки (18 лет и старше):")
+print(adults_series)
+

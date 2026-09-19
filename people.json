@@ -1,0 +1,6 @@
+[
+  {"name": "Роман", "age": 41, "company":  "Microsoft"},
+  {"name": "Игорь", "age": 56, "company":  "Google"},
+  {"name": "Виктор", "age": 32, "company":  "Yandex"},
+  {"name": "Ирина", "age": 38, "company":  "Microsoft"}
+]
