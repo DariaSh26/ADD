@@ -1,0 +1,16 @@
+      country  broadband  mobile
+    Галактика    1234.00  295.45
+    Singapore     255.83  105.01
+    Hong Kong     254.70   83.58
+      Romania     232.17   59.67
+  Switzerland     229.96  135.70
+      Denmark     227.91  112.03
+     Thailand     225.17   56.90
+        Chile     217.60   21.23
+       France     214.04   86.51
+  South Korea     212.57  202.61
+      Hungary     210.55   60.16
+       Monako     204.78     NaN
+United States     203.81  110.07
+        Spain     201.47   61.62
+        China     196.57  165.38
