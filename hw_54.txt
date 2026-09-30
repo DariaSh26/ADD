@@ -1,0 +1,63 @@
+Задание 1. Сравнение двух температурных рядов
+
+Условие:
+Имеются данные о температуре за 5 дней недели (понедельник — пятница):
+•	Город А: [20, 22, 19, 23, 25]
+•	Город Б: [15, 17, 18, 16, 21]
+Постройте на одной координатной плоскости два линейных графика: для Города А (красная сплошная линия с маркерами в виде точек) и Города Б (зеленая штрихпунктирная линия с маркерами-квадратами). Обязательно добавьте легенду.
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+days = np.array([1, 2, 3, 4, 5])
+temp_A = [20, 22, 19, 23, 25]
+temp_B = [15, 17, 18, 16, 21]
+
+
+plt.plot(days, temp_A, color="red", linestyle="-", marker="o", label="Город А")
+plt.plot(days, temp_B, color="green", linestyle="-.", marker="s", label="Город Б")
+
+plt.xlabel("День недели", fontsize=12)
+plt.ylabel("Температура", fontsize=12)
+plt.title("Сравнение температур в городах А и Б", fontsize=14, fontweight="bold", color="blue", loc="center")
+
+plt.xticks(days, ["Пн", "Вт", "Ср", "Чт", "Пт"])
+
+plt.yticks([15, 16, 17, 18, 19, 20, 21, 22, 23, 25], ["15°", "16°", "17°", "18°", "19°", "20°", "21°", "22°", "23°", "25°"])
+
+plt.grid(visible=True, which="major", linestyle="--", linewidth=0.5, color="gray", alpha=0.7)
+plt.legend(loc="lower right", fontsize=11, framealpha=0.5)
+
+plt.show()
+
+
+
+Задание 2. Отображение прибыли компании и выделение лучшего месяца
+
+Условие:
+Даны показатели прибыли компании (в тыс. рублей) за первое полугодие: [120, 150, 90, 210, 180, 250].
+Постройте линейный график. Окрасьте линию в фиолетовый цвет, увеличьте её толщину до 3. Отдельно выделите точку с максимальной прибылью крупным красным маркером.
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+month = np.array([1, 2, 3, 4, 5, 6])
+profit = [120, 150, 90, 210, 180, 250]
+
+max_index = np.argmax(profit)
+max_month = month[max_index]
+max_profit = profit[max_index]
+plt.plot(month, profit, color="purple", linestyle="-", linewidth=3)
+plt.plot(max_month, max_profit, color="red", marker="o", ms=10)
+
+plt.xlabel("Месяц", fontsize=12)
+plt.ylabel("Доход (тыс. руб.)", fontsize=12)
+plt.title("Прибыль компании за полугодие", fontsize=14, fontweight="bold", color="blue", loc="center")
+
+plt.xticks(month, ["Янв", "Фев", "Март", "Апр", "Май", "Июнь"])
+
+plt.grid(visible=True, which="major", linestyle="--", linewidth=0.5, color="gray", alpha=0.7)
+plt.tight_layout()
+plt.show()
+

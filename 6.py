@@ -2838,8 +2838,8 @@ import a
 
 #=================
 
-import numpy as np
-import pandas as pd
+# import numpy as np
+# import pandas as pd
 #
 # data = {
 #     "A": [1, 2, np.nan, 4, None],
@@ -2914,7 +2914,7 @@ import pandas as pd
 
 
 #=========================
-
+#Занятие 13
 # data = {
 #     "product_id": [105, 11, 102, 108, 123, 105],
 #     "category": [
@@ -2934,14 +2934,54 @@ import pandas as pd
 # df["category"] = df["category"].str.strip()           # удаляет пробелы слева и справа
 # # print(df)
 # print("*" * 50)
-# df["price"] = df["price"].str.replace(" ", "")
+# df["price"] = df["price"].str.replace(" ", "")       # удаляет пробелы
 # # print(df)
-# df["price"] = df["price"].str.replace(",", ".")
+# df["price"] = df["price"].str.replace(",", ".")      # замена запятой на точку
 # print(df)
-
-
-
-
+# print("*" * 50)
+# df["price"] = pd.to_numeric(df["price"], errors="coerce")   # замена "Не указана" на Nan
+# print(df)
+# print("*" * 50)
+# df["price"] = df["price"].fillna(df["price"].median())
+# print(df)
+# print("*" * 60)
+# df["quantity"] = df["quantity"].fillna(1)
+# print(df)
+# print("*" * 60)
+# df["total_revenue"] = df["quantity"] * df["price"]
+# print(df)
+# print("*" * 60)
+# df = df.drop_duplicates()
+# print(df)
+#
+#
+#
+#
+# import pandas as pd
+#
+# df = pd.read_csv("platforms.csv")
+# print(df, end="\n\n")
+#
+# df["Views"] = df["Views"].fillna(df["Views"].mean())
+# df["Revenue"] = df["Revenue"].fillna(0)
+# df.drop_duplicates(inplace=True)
+# print(df, end="\n\n")
+#
+# df["Views"] = df["Views"].astype(int)             # убирает нули
+# df["Date"] = pd.to_datetime(df["Date"])           # преобразовали дату из строкового значения в дату
+# print(df, end="\n\n")
+#
+# print(df.describe(), end="\n\n")                # выполнение описания всех данных через этот метод
+#
+# filtered = df[df["Platform"] == "YouTube"]
+# print(filtered, end="\n\n")
+#
+# mean_views = filtered["Views"].mean()
+# mean_revenue = filtered["Revenue"].mean()
+# print(mean_views, end="\n\n")
+# print(mean_revenue, end="\n\n")
+#
+# filtered.to_csv("new_data.csv", index=False)       # создание нового документа
 
 
 #=======================
@@ -2981,3 +3021,145 @@ import pandas as pd
 # mean_sales = df["Продажи"].mean()
 # df["Продажи"] = df["Продажи"].fillna(mean_sales)
 # print(df)
+
+#================
+
+# продолжение 13 занятие ВИЗУАЛИЗАЦИЯ ДАННЫХ matplotlib
+# import numpy as np
+# import matplotlib.pyplot as plt
+
+# x = np.array([4, 5, 6, 7, 8])
+# y = np.array([1, 2, -6, 0, 4])
+# plt.plot(x, y)
+# plt.show()
+
+#
+# x = np.array([1, 1, 5, 5, 1])
+# y = np.array([1, 5, 5, 1, 1])
+# plt.plot(x, y)
+# plt.show()
+
+# y = np.array([0, 1, 2, 3, 4])
+# x = np.array([a * a for a in y])             # [ 0  1  4  9 16]
+# print(x)
+# plt.plot(x, y)
+# plt.grid()
+# plt.show()
+
+# plt.plot([1, 2, 3], [4, 5, 2], [1, 2, 4], [5, 3, 6])
+# plt.plot([1, 2, 3], [4, 5, 2])
+# plt.plot( [1, 2, 4], [5, 3, 6])
+# plt.grid()
+# plt.show()
+
+
+# plt.plot([1, 2, 4],[4, 2, 5], "--")
+# plt.show()
+
+# plt.plot([1, 2, 4],[4, 2, 5], "-.", [1, 2, 3], [3, 6, 5], ":")
+# plt.plot([1, 2, 4],[4, 2, 5], "-.", color="red")
+# plt.plot([1, 2, 4],[4, 2, 5], "-.", color="#FF0000")
+# plt.plot([1, 2, 4], [4, 2, 5], "-.", c="#F00", marker="s", markerfacecolor='w', linewidth=4)
+# plt.grid()
+# plt.show()
+
+# x = [1, 2, 4]
+# y = [4, 2, 5]
+# x1 = [1, 2, 4]
+# y1 = [3, 4, 4]
+# plt.plot(x, y, color="green", label="Линия 1")
+# plt.plot(x1, y1, color="orange", label="Линия 2")
+# plt.fill_between(x1, y1, y, color="yellow", alpha=0.3, label="Область между ними")
+# plt.title("заливка между двумя линиями")
+# plt.xlabel("Ось X")
+# plt.ylabel("Ось Y")
+# plt.legend()
+# plt.minorticks_on()
+# plt.grid(which="major", color="#444", linewidth="1")
+# # plt.grid(which="minor", color="#aaa", linewidth="0.5")
+# plt.grid(which="minor", color="#aaa", ls=":")
+# plt.show()
+
+
+# fig, ax = plt.subplots()
+#
+# ax.plot([1, 2, 3], [4, 5, 6])
+# ax.set_title("Мой график")
+# plt.show()
+
+
+#
+# days = np.array(list(range(1, 8)))
+# temperature = [20, 22, 21, 26, 28, 23, 24]
+#
+# fig, ax = plt.subplots()
+# ax.set_xlabel('День')
+# ax.set_ylabel('Температура', fontsize = 14)
+# ax.set_title("Динамика температуры за неделю", fontsize = 16, fontweight = 'bold', color='blue', loc = 'right')
+#
+# ax.set_yticks([20, 22, 21, 26, 28, 23, 24])
+# ax.set_yticklabels(["20°", "22°", "21°", "26°", "28°", "23°", "24°"])
+#
+# ax.set_xticks(days)
+# ax.set_xticklabels(["Пн", "Вт", "Ср","Чт", "Пт", "Сб", "Вс"])
+#
+# ax.tick_params(axis='x', length=7, labelsize=12) # , rotation=90
+# ax.grid(True, which='major', axis='both', linestyle='--', linewidth=0.5, color='gray', alpha=0.7)
+#
+# ax.text(5, 28, "Макс. значение", fontsize=12, color='red', va='bottom', ha='right')
+#
+# ax.plot(days, temperature, label="Температура")
+# # ax.legend(loc="upper left")
+# ax.legend(loc="lower right", fontsize=21, framealpha=0.5)
+# # ax.legend(loc="center")
+# # ax.legend(loc="best")
+#
+# plt.show()
+
+#==============================================================
+# ДЗ 1
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# days = np.array([1, 2, 3, 4, 5])
+# temp_A = [20, 22, 19, 23, 25]
+# temp_B = [15, 17, 18, 16, 21]
+#
+#
+# plt.plot(days, temp_A, color="red", linestyle="-", marker="o", label="Город А")
+# plt.plot(days, temp_B, color="green", linestyle="-.", marker="s", label="Город Б")
+#
+# plt.xlabel("День недели", fontsize=12)
+# plt.ylabel("Температура", fontsize=12)
+# plt.title("Сравнение температур в городах А и Б", fontsize=14, fontweight="bold", color="blue", loc="center")
+#
+# plt.xticks(days, ["Пн", "Вт", "Ср", "Чт", "Пт"])
+#
+# plt.yticks([15, 16, 17, 18, 19, 20, 21, 22, 23, 25], ["15°", "16°", "17°", "18°", "19°", "20°", "21°", "22°", "23°", "25°"])
+#
+# plt.grid(visible=True, which="major", linestyle="--", linewidth=0.5, color="gray", alpha=0.7)
+# plt.legend(loc="lower right", fontsize=11, framealpha=0.5)
+#
+# plt.show()
+
+# ДЗ 2
+
+# month = np.array([1, 2, 3, 4, 5, 6])
+# profit = [120, 150, 90, 210, 180, 250]
+#
+# max_index = np.argmax(profit)
+# max_month = month[max_index]
+# max_profit = profit[max_index]
+# plt.plot(month, profit, color="purple", linestyle="-", linewidth=3)
+# plt.plot(max_month, max_profit, color="red", marker="o", ms=10)
+#
+# plt.xlabel("Месяц", fontsize=12)
+# plt.ylabel("Доход (тыс. руб.)", fontsize=12)
+# plt.title("Прибыль компании за полугодие", fontsize=14, fontweight="bold", color="blue", loc="center")
+#
+# plt.xticks(month, ["Янв", "Фев", "Март", "Апр", "Май", "Июнь"])
+#
+# plt.grid(visible=True, which="major", linestyle="--", linewidth=0.5, color="gray", alpha=0.7)
+# plt.tight_layout()
+# plt.show()
