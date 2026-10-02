@@ -3119,8 +3119,8 @@ import a
 #==============================================================
 # ДЗ 1
 
-import numpy as np
-import matplotlib.pyplot as plt
+# import numpy as np
+# import matplotlib.pyplot as plt
 
 # days = np.array([1, 2, 3, 4, 5])
 # temp_A = [20, 22, 19, 23, 25]
@@ -3162,4 +3162,240 @@ import matplotlib.pyplot as plt
 #
 # plt.grid(visible=True, which="major", linestyle="--", linewidth=0.5, color="gray", alpha=0.7)
 # plt.tight_layout()
+# plt.show()
+
+
+#==============================================================
+# Занятие 14
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from openpyxl.chart import marker
+
+# x = np.array([np.random.randint(0, 10) for i in range(100)])
+# y = np.array([np.random.randint(0, 10) for i in range(100)])
+#
+# plt.scatter(x, y, color='red', alpha=0.5)
+# plt.xlabel('Переменная X')
+# plt.ylabel('Переменная Y')
+# plt.title("Диаграмма рассеяния")
+#
+# plt.show()
+
+
+
+
+# districts = np.array([i for i in range(10) for j in range(20)])
+# # print(districts)
+# base_prices = [65, 80, 75, 35, 90, 55, 40, 110, 95, 70]
+# prices = [
+#     base_prices[d] + np.random.randint(-10, 10) for d in districts
+# ]
+# # print(prices)
+# df = pd.DataFrame({"District": districts, "Price": prices})
+#
+# mean_price = df.groupby("District")["Price"].mean()
+# cheapest_districts = mean_price.nsmallest(2).index.tolist()
+# print(f"Самые дешевые районы: {cheapest_districts}")
+#
+# cheapest_df = df[df["District"].isin(cheapest_districts)]   #информация по 2 самым дешевым районам
+# other_df = df[~df["District"].isin(cheapest_districts)]   # все кроме дешевых
+#
+#
+# plt.figure(figsize=(10, 6))
+#
+# plt.scatter(
+#     other_df["District"],
+#     other_df["Price"],
+#     color="lightgray",
+#     alpha=0.7,
+#     edgecolor="black",
+#     linewidth=0.5,
+#     label="Остальные районы"
+# )
+#
+# plt.scatter(
+#     cheapest_df["District"],
+#     cheapest_df["Price"],
+#     color="red",
+#     alpha=0.9,
+#     edgecolor="black",
+#     s=70,
+#     label="2 самых дешевых района"
+# )
+#
+# plt.title("Распределение цен на квартиры по районам города", fontsize=14, fontweight="bold")
+#
+# plt.xlabel("Номер района", fontsize=12)
+# plt.ylabel("Цена квартиры (млн руб.)", fontsize=12)
+# plt.grid(axis="y", linestyle="--", alpha=0.5)
+# plt.legend()
+#
+# plt.show()
+
+#==============================
+
+# age_data =[np.random.randint(18, 55) for i in range(25)]
+# print(age_data)
+#
+# plt.hist(age_data, bins=10, edgecolor='black', color='orange')
+#
+# plt.title('Возраст зрителей в кинотеатре')
+# plt.xlabel("Возраст (лет)")
+# plt.ylabel("Количество человек")
+#
+# plt.show()
+
+#=====================================================
+# import random
+#
+# delivery_times = [random.gauss(35.0, 7.0)for i in range(1000)]
+#
+# plt.figure(figsize=(9,5))
+# plt.hist(
+#     delivery_times,
+#     bins=20,
+#     color='#3498db',
+#     edgecolor="white",
+#     alpha=0.8
+# )
+#
+# plt.axvline(x=40,color='red', linestyle="--", linewidth=2,label="Стандарт компании (40 минут)")
+#
+# plt.title("Анализ времени доставки пиццы (1000 заказов)", fontsize=14, fontweight='bold')
+# plt.xlabel("Время доставки (минуты)",fontsize=12)
+# plt.ylabel("Количество заказов",fontsize=12)
+# plt.grid(axis="y", linestyle=":", linewidth=0.6)
+# plt.legend(loc="upper left")
+# plt.legend()
+# plt.show()
+#===================================================
+
+# categories = ["Пицца", "Бургеры", "Суши", "Салаты", "Напитки"]
+# sales = [120, 85, 95, 40, 150]
+#
+# plt.figure(figsize=(8,5))
+# plt.bar(categories, sales, color="#1f77ff", edgecolor="#0000BB", width=0.6)
+#
+# plt.title("Продажа блюд в кафе за день", fontsize=14, fontweight='bold')
+# plt.xlabel("Категория меню", fontsize=12)
+# plt.ylabel("Количество проданных порций", fontsize=12)
+#
+# plt.grid(axis="y", linestyle="--", alpha=0.5)
+# plt.show()
+
+#===================
+# languages = ['Python', 'JavaScript', 'Java', 'C#', 'C++', 'Go', 'PHP']
+# # project_count = [45, 38, 29, 22, 15, 12, 8]
+# #
+# # colors = ['purple' if i == 0 else '#b0bec5' for i in range(len(languages))]
+# # # print(colors)
+# #
+# # plt.figure(figsize =(9,6))
+# #
+# # bars = plt.bar(languages, project_count, color=colors)
+# #
+# # plt.title('Использование языков программирования в компании', fontsize=14, fontweight='bold')
+# # plt.xlabel("Языки программирования", fontsize=12, labelpad=25)   # labelpad - расстояние от названия оси x до меток
+# # plt.ylabel("Количество активных проектов", fontsize=12, labelpad=10)
+# #
+# # plt.ylim(0, max(project_count)+5)  # отодвигаем внутреннюю часть графика
+# #
+# # plt.grid(axis='y', linestyle='--', linewidth=0.5)
+# # plt.gca().spines['top'].set_visible(False)  # убираем рамку у графика (сверху)
+# # plt.gca().spines['right'].set_visible(False)  # убираем рамку у графика (справа)
+# # plt.tight_layout()     # этот метод для того чтобы все поместилось на холсте
+# # plt.show()
+
+#==============================
+# days = [1, 2, 3, 4, 5]
+#
+# works = [5, 4, 6, 5, 4]
+# rest = [3, 4, 2, 3, 4]
+# sleep = [5, 7, 10, 9, 8]
+#
+# plt.stackplot(days, works, rest, sleep, labels=['Работа', 'Отдых', 'Сон'], colors=['#4466ee', '#00bbff', '#ff9988'])
+#
+# plt.title("Распредление времени за 5 дней")
+# plt.xlabel("Дни")
+# plt.ylabel("Часы")
+# plt.legend()
+# plt.grid(alpha=0.3)
+# plt.show()
+#=====================================
+# mouths = pd.date_range(start='2026-01-01', end='2026-12-31', freq='MS')
+# print(mouths)
+#
+# laptops = [5500, 5800, 3000, 3500, 3500, 3800, 6100, 6500, 6600, 6600, 6800, 5000]
+# smartphones = [2500, 1600, 2700, 1800, 2900, 5000, 5100, 5500, 5300, 5600, 5500, 5600]
+# tablets = [1000, 1500, 1600, 1600, 1800, 5000, 5500, 5600, 5600, 5800, 3000, 3500]
+#
+# df = pd.DataFrame({"Month": mouths.strftime("%b %Y"), "Laptops": laptops, "Smartphones": smartphones, "Tablets":tablets})
+#
+# plt.figure(figsize=(12, 6))
+# plt.stackplot(df['Month'], df['Laptops'], df['Smartphones'], df['Tablets'], labels=['Ноутбуки', 'Смартфоны', 'Планшеты'])
+#
+# plt.title("Общие ежемесячные продажи за год")
+# plt.xlabel("Месяц")
+# plt.ylabel("Общие продажи")
+# plt.grid()
+#
+# plt.legend()
+# plt.show()
+#================================
+# labels = ["Еда", "транспорт", "Жилье", "Развлечения"]
+# sizes = [30, 20, 40, 10]
+#
+# plt.pie(sizes, labels=labels, autopct='%1.1f%%', colors=['red', 'green', 'blue', 'yellow'])
+#
+# plt.title("Круговая диаграмма")
+#
+# plt.show()
+
+
+# sizes = [35, 25, 25, 15]
+# labels = ['Python', 'JavaScript', 'C++', 'Java']
+# colors = ['#ff9999', '#66bbff', '#99ff99', '#ffcc99']
+# explode = (0.1, 0, 0, 0)                                     # отделение от диаграммы большой части
+#
+# plt.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', explode=explode, shadow=True, startangle=100)
+#
+# plt.title("Популярность языков программирования")
+# plt.show()
+
+
+#============================
+#ДЗ
+#
+#
+# square = [35, 42, 54, 62, 71, 85, 93, 104, 115, 128]
+# price = [8.4, 11.3, 14.6, 19.8, 22.1, 28.9, 33.5, 41.6, 49.5, 58.9]
+#
+# plt.scatter(square, price, marker="o", c='blue', alpha=0.5, label='Данные о квартирах')
+#
+# plt.title("Зависимость цены квартиры от её площади")
+# plt.xlabel("Площадь (кв. метр)")
+# plt.ylabel("Цена (млн рублей)")
+# plt.grid()
+#
+# plt.legend()
+# plt.show()
+
+#
+# categories = ["Электроника", "Одежда", "Книги", "Дом и сад"]
+# sales = [450, 320, 180, 290]
+#
+# plt.figure(figsize=(10, 5))
+#
+# plt.bar(categories, sales, color = ['#ff9999', '#66bbff', '#99ff99', '#ffcc99'], width=0.9)
+#
+#
+# plt.title("Сравнение объемов продаж разных категорий товаров", fontsize=14, fontweight='bold')
+# plt.xlabel("Категория товаров", fontsize=12, labelpad=10)
+# plt.ylabel("Продажи (тыс. руб.)", fontsize=12, labelpad=10)
+# plt.gca().spines['top'].set_visible(False)
+# plt.gca().spines['right'].set_visible(False)
+#
+# plt.grid(axis="y", linestyle="--", alpha=0.5)
 # plt.show()
