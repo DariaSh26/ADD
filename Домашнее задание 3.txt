@@ -1,0 +1,56 @@
+Задача 1: продажи отделов магазина (Настройка цветов и сетки)
+Условие: Магазин продает три категории товаров: Электроника, Одежда и Книги. Данные разбиты по кварталам. Постройте график, задайте категории вручную с помощью списка цветов (colors) и включите фоновую сетку для удобства чтения.
+
+Исходные данные:
+•	quarters = ['Q1', 'Q2', 'Q3', 'Q4'] 
+•	electronics = [40, 55, 48, 70] 
+•	clothing = [30, 45, 40, 65] 
+•	books = [15, 20, 18, 25]
+
+
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+quarters = ['Q1', 'Q2', 'Q3', 'Q4']
+
+electronics = [40, 55, 48, 70]
+clothing = [30, 45, 40, 65]
+books = [15, 20, 18, 25]
+
+plt.figure(figsize=(10,6))
+plt.stackplot(quarters, electronics, clothing, books,
+              labels=['Электроника', 'Одежда', 'Книги'],
+              colors=['#4466ee', '#00bbff', '#ff9988'])
+
+plt.title("Продажи отделов магазина")
+plt.xlabel("Кварталы")
+plt.ylabel("Объем продаж")
+plt.legend()
+plt.grid(alpha=0.3)
+plt.show()
+
+
+
+Задача 2: круговая диаграмма (Доли рынка смартфонов)
+Условие: У вас есть данные о долях рынка четырех популярных брендов смартфонов: Apple, Samsung, Xiaomi и Другие. Постройте простую круговую диаграмму, добавьте подписи к каждому сектору и выведите проценты внутри графика с округлением до одного знака после запятой.
+
+Данные: названия и их доли в процентах:
+•	brands = ['Apple', 'Samsung', 'Xiaomi', 'Другие'] 
+•	market_share = [30, 25, 20, 25]
+
+
+import matplotlib.pyplot as plt
+
+
+brands = ['Apple', 'Samsung', 'Xiaomi', 'Другие']
+market_share = [30, 25, 20, 25]
+
+plt.figure(figsize=(7, 7))
+plt.pie(market_share, labels=brands, autopct='%1.1f%%', colors=['#4f46e5', '#10b981', '#06b6d4', '#f59e0b'])
+
+plt.title("Доли рынка брендов смартфонов", fontsize=14)
+plt.show()
+
+
+

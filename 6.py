@@ -3168,10 +3168,10 @@ import a
 #==============================================================
 # Занятие 14
 
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-from openpyxl.chart import marker
+# import numpy as np
+# import pandas as pd
+# import matplotlib.pyplot as plt
+# from openpyxl.chart import marker
 
 # x = np.array([np.random.randint(0, 10) for i in range(100)])
 # y = np.array([np.random.randint(0, 10) for i in range(100)])
@@ -3399,3 +3399,252 @@ from openpyxl.chart import marker
 #
 # plt.grid(axis="y", linestyle="--", alpha=0.5)
 # plt.show()
+
+
+#=====================================
+#Занятие 15
+#
+# age = [22, 24, 26, 28, 29, 30, 31, 32, 35, 38, 41, 45, 65]
+#
+# plt.boxplot(
+#     age,
+#     patch_artist=True,
+#     widths=0.15,
+#     flierprops=dict(marker='o', markersize=5, markeredgecolor='#ff4dd4', markerfacecolor='#ff9999', alpha=0.8),
+#     medianprops=dict(color='#FF0000', linewidth=3),
+#     boxprops=dict(facecolor="#99ccff",color='#4d4d4d', linewidth=1),
+#     whiskerprops=dict(color='#0000FF', linewidth=1),
+#     capprops=dict(color='#0000FF', linewidth=1),
+# )
+#
+# plt.grid(axis='y', linestyle='--', color='#CCCCCC')
+#
+# plt.text(1.1, 30, 'Медиана (30)', va='center', ha='left')
+# plt.text(1.1, 22, "Мин (22)", va='center', ha='left')
+# plt.text(1.1, 65, "Выброс (65)", va='center', ha='left', color='#cc6666', fontsize=11)
+#
+# plt.title("Распределение возраста сотрудников")
+# plt.ylabel("Возраст (лет)")
+# plt.xlabel("Сотрудники")
+#
+# plt.xticks([1], [''])
+# plt.show()
+
+
+#=============================
+# import numpy as np
+# import matplotlib.pyplot as plt
+# import pandas as pd
+
+# x = np.array([1, 2, 3])
+# y = np.array([1, 2, 3])
+#
+# x, y = np.meshgrid(x, y)
+#
+# z = x + y
+#
+# fig, ax = plt.subplots(subplot_kw=dict(projection='3d'))
+# ax.plot_surface(x, y, z)
+# plt.show()
+
+
+# price = np.array([10, 20, 30, 40, 50])
+# customers = np.array([100, 200, 300, 400, 500])
+#
+# x, y = np.meshgrid(price, customers)
+#
+# z = x * y
+#
+# fig = plt.figure()
+# ax = fig.add_subplot(111, projection='3d')
+#
+# ax.plot_surface(x, y, z, cmap='viridis')
+#
+# ax.set_title("Модель прибыли")
+# ax.set_xlabel("Цена товара($)")
+# ax.set_ylabel("Количество клиентов")
+# ax.set_zlabel("Прибыль($)")
+#
+#
+# plt.show()
+
+
+# import numpy as np
+# import matplotlib.pyplot as plt
+# import pandas as pd
+#
+# data = np.array(np.array([[np.random.randint(-2, 3) for i in range(5)] for j in range(15)]))
+# df = pd.DataFrame(data, columns=['Возраст', 'Доход', 'Кредит', 'Покупки', 'Дети'])
+# print(df)
+#
+# df.iloc[2,0] = np.nan
+# df.iloc[5:8, 1] = np.nan
+# df.iloc[12, 2] = np.nan
+# df.iloc[1, 3] = np.nan
+# df.iloc[7:10, 4] = np.nan
+#
+# print("*" * 60)
+# print(df)
+#
+# missing_matrix = df.notna().astype(int)
+# print("*" * 60)
+# print(missing_matrix)
+#
+# plt.figure(figsize=(8, 6))
+#
+# plt.imshow(missing_matrix, aspect='auto')
+#
+# cbar = plt.colorbar(ticks=[0, 1])
+# cbar.ax.set_yticklabels(["Пропуск (NaN)", "Есть данные"])
+#
+# plt.xticks(range(len(df.columns)), df.columns, rotation=45, ha='right')
+# plt.yticks(range(len(df)))
+#
+# plt.title("Карта пропущенных значений в датасете")
+# plt.xlabel("Признаки (колонки)")
+# plt.ylabel("Индексы строки (записи)")
+#
+# plt.show()
+
+#=============================
+
+# import numpy as np
+# import matplotlib.pyplot as plt
+#
+# days = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс']
+# hours = [f"{h:02d}:00" for h in range(9, 21)]
+#
+# data = np.random.randint(5, 40, size=(len(hours), len(days)))
+# data[3:5, 0:5] += 25
+# data[7:11, 5:7] += 45
+#
+# plt.figure(figsize=[9, 7])
+#
+# im = plt.imshow(data, aspect='auto', cmap='Oranges')
+# for i in range(len(hours)):
+#     for j in range(len(days)):
+#         val = data[i, j]
+#         color = "White" if val > 45 else "black"
+#         plt.text(j, i, str(val), ha="center", va="center", color=color, fontsize=10)
+#
+# plt.xticks(range(len(days)), days)
+# plt.yticks(range(len(hours)), hours)
+#
+# cbar = plt.colorbar(im)                                  # цветовая растяжка
+# cbar.set_label("Количество дней/ покупок", labelpad=10)
+#
+# plt.gca().set_xticks(np.arange(-0.5, len(days), 1), minor=True)
+# plt.gca().set_yticks(np.arange(-0.5, len(hours), 1), minor=True)
+#
+# plt.grid(which="minor", color="white", linestyle="-", linewidth=1.5)
+# plt.tick_params(which="minor", bottom=False, left=False)
+# plt.show()
+
+#=============================
+# import numpy as np
+# import matplotlib.pyplot as plt
+
+# x = np.array(list(range(1, 13)))
+# print(x)
+#
+# y1 = np.random.randint(50, 200, size=12)
+# y2 = np.random.randint(50, 200, size=12)
+#
+# fig, ax = plt.subplots()
+#
+# ax.plot(x, y1, label="Общие продажи", color="blue")
+# ax.scatter(x, y2, label="Пиковые продажи", color="red")
+# ax.bar(x, y1, alpha=0.3, label= "Распределение продаж", color="violet")
+#
+# ax.legend()
+# plt.show()
+
+#=============================
+
+# import numpy as np
+# import matplotlib.pyplot as plt
+#
+# fig, ax = plt.subplots(nrows=2, ncols=2, figsize=(10, 8))
+#
+#
+# x = np.array(list(range(1, 6)))   # [1 2 3 4 5]
+# y1 = [1, 4, 9, 16, 25]
+# y2 = [2, 3, 5, 7, 11]
+#
+# ax[0][0].plot(x, y1, color='blue')
+# ax[0][0].set_title("Линейный график")
+#
+# ax[0, 1].scatter(x, y2, color='red')
+# ax[0, 1].set_title("Диаграмма рассеяния")
+#
+# ax[1, 0].bar(x, y1, color='green')
+# ax[1, 0].set_title("Стобчатая диаграмма")
+#
+# ax[1, 1].hist(np.random.randn(100), bins=15, color="purple")
+# ax[1, 1].set_title("Гистограмма")
+#
+#
+# plt.show()
+# # plt.savefig('chart_1.png', dpi=300, bbox_inches='tight', facecolor='non', edgecolor='non')
+# # сохранение диаграмм и для печати и facecolor='non' убрать фон, bbox_inches='tight' - удалить поля дополнительные
+# # plt.savefig('chart_3.png', dpi=300, transparent=True)   # удаляет фон даже в графике
+# # plt.savefig('chart_4.pdf',bbox_inches='tight')
+# # plt.savefig('chart_5.svg',bbox_inches='tight')
+# plt.savefig('chart_5.svg', dpi=300, bbox_inches='tight')
+
+#=====================
+
+# import matplotlib.pyplot as plt
+# import seaborn as sns
+#
+# sns.set_theme(style="whitegrid")
+# tips = sns.load_dataset("tips")
+# # print(tips.head())
+#
+# # datasets =sns.get_dataset_names()
+# # print(datasets)
+#
+# plt.figure(figsize=(10,6))
+# sns.histplot(data=tips, x="total_bill", bins=30)
+# plt.title("Распредление счетов")
+# plt.xlabel("Общая сумма счета($)", fontsize=11)
+# plt.ylabel("Чаевые", fontsize=11)
+# plt.show()
+
+#=============================
+
+# ДЗ
+
+# import matplotlib.pyplot as plt
+# import seaborn as sns
+#
+# quarters = ['Q1', 'Q2', 'Q3', 'Q4']
+#
+# electronics = [40, 55, 48, 70]
+# clothing = [30, 45, 40, 65]
+# books = [15, 20, 18, 25]
+#
+# plt.figure(figsize=(10,6))
+# plt.stackplot(quarters, electronics, clothing, books,
+#               labels=['Электроника', 'Одежда', 'Книги'],
+#               colors=['#4466ee', '#00bbff', '#ff9988'])
+#
+# plt.title("Продажи отделов магазина")
+# plt.xlabel("Кварталы")
+# plt.ylabel("Объем продаж")
+# plt.legend()
+# plt.grid(alpha=0.3)
+# plt.show()
+
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+brands = ['Apple', 'Samsung', 'Xiaomi', 'Другие']
+market_share = [30, 25, 20, 25]
+
+plt.figure(figsize=(7, 7))
+plt.pie(market_share, labels=brands, autopct='%1.1f%%', colors=['#4f46e5', '#10b981', '#06b6d4', '#f59e0b'])
+
+plt.title("Доли рынка брендов смартфонов", fontsize=14)
+plt.show()
