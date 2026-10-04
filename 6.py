@@ -3593,11 +3593,12 @@ import a
 # plt.savefig('chart_5.svg', dpi=300, bbox_inches='tight')
 
 #=====================
+#Занятие 16
 
 # import matplotlib.pyplot as plt
 # import seaborn as sns
 #
-# sns.set_theme(style="whitegrid")
+# sns.set_theme(style="whitegrid", context="talk")
 # tips = sns.load_dataset("tips")
 # # print(tips.head())
 #
@@ -3611,8 +3612,254 @@ import a
 # plt.ylabel("Чаевые", fontsize=11)
 # plt.show()
 
+#==============
+
+# tips = sns.load_dataset("tips")
+# print(tips.head())
+#
+# plt.figure(figsize=(10,6))
+# # sns.boxplot(tips, x="day", y="total_bill")
+# sns.boxenplot(tips, x="day", y="total_bill",
+#               palette = "viridis",
+#               linewidth = 2,
+#               width = 0.5,
+#               k_depth="proportion",
+#               order=["Fri", "Sat", "Sun", "Thur"]
+#               )
+# plt.title("Распредление счетов по дням")
+# plt.xlabel("Дни недели", fontsize=11)
+# plt.ylabel("Общая сумма счета($)", fontsize=11)
+# plt.grid(alpha=0.3)
+# plt.show()
+
+#================
+#
+# tips = sns.load_dataset("tips")
+# print(tips.head())
+# #
+# # plt.figure(figsize=(10,6))
+# # sns.scatterplot(data=tips, x="total_bill", y="tip", hue="smoker")
+# # plt.title("Зависимость чаевых от счета")
+# # plt.show()
+#
+#
+# corr_matrix = tips.corr(numeric_only=True)
+# sns.heatmap(corr_matrix, annot=True, cmap="coolwarm", fmt=".2f")                       # тепловая карта
+# plt.title("Корреляционная матрица")
+# plt.show()
 #=============================
 
+# iris = sns.load_dataset("iris")
+# print(iris.head())
+#
+# sns.pairplot(iris, hue="species")
+# plt.show()
+
+
+
+# titanic = sns.load_dataset("titanic")
+# print(titanic.head())
+#
+# plt.figure(figsize=(10,6))
+# sns.countplot(titanic, x='class', hue='survived')
+# plt.title('Выживаемость по классам')
+# plt.show()
+
+# import matplotlib.pyplot as plt
+# import seaborn as sns
+# import numpy as np
+#
+# tips = sns.load_dataset("tips")
+# print(tips.head())
+#
+# plt.figure(figsize=(10,6))
+# # sns.violinplot(data=tips, x="day", y="total_bill", palette="husl", hue="day")
+# # plt.title("Распределение счетов (violin plot)")
+# # plt.show()
+#
+# # sns.barplot(x="day", y="total_bill", data=tips, estimator=np.mean)
+# # plt.title("Средний счет по дням")
+#
+# # sns.kdeplot(data=tips, x="total_bill", fill=True, color="coral", alpha=0.5, linewidth=3)
+# sns.kdeplot(data=tips, x="total_bill", fill=True, hue="smoker", alpha=0.4, palette="Set2")
+# plt.figure(figsize=(10,6))
+# # plt.title("Плотность распределения счетов")
+# plt.title("Распределения счетов: курящие vs некурящие")
+# plt.xlabel("Сумма счета")
+# plt.ylabel("Плотность")
+# plt.grid(alpha=0.3)
+# plt.show()
+
+
+
+# import matplotlib.pyplot as plt
+# import pandas as pd
+# import seaborn as sns
+# import numpy as np
+
+# tips = sns.load_dataset("tips")
+# print(tips.head())
+#
+# fig, axes = plt.subplots(nrows=2, ncols=2, figsize=(14,10))
+#
+# sns.histplot(data=tips, x='total_bill', ax=axes[0, 0], color='skyblue')
+# axes[0, 0].set_title('Гистограмма счетов')
+#
+# sns.boxplot(data=tips, x='day', y='total_bill', ax=axes[0, 1])
+# axes[0, 1].set_title("Ящики по дням")
+#
+# sns.scatterplot(data=tips, x='total_bill', y='tip', hue='smoker', ax=axes[1, 0])
+# axes[1, 0].set_title("Рассеяние: счет vs чаевые")
+#
+# sns.barplot(data=tips, x='day', y='total_bill', ax=axes[1, 1])
+# axes[1, 1].set_title("Средний счет по дням")
+#
+# plt.show()
+#========================================
+
+# import matplotlib.pyplot as plt
+# import pandas as pd
+# import seaborn as sns
+# import numpy as np
+
+# df = pd.DataFrame({
+#     'sales': np.random.normal(100, 20, 200),
+#     'region': np.random.choice(["Север", "Юг", "Запад", "Восток"], 200),
+#     'month': np.random.choice(['Янв', 'Февр', 'Март', 'Апр'], 200)
+# })
+#
+# print(df)
+#
+# fig, ax = plt.subplots(1, 3, figsize=(15, 5))
+#
+# sns.histplot(df['sales'], ax=ax[0], color='green')
+# ax[0].set_title('Распределение продаж')
+#
+#
+# plt.boxplot(data=df, x='region', y='sales', ax=ax[1])
+# ax[1].set_title("Продажи по регионам")
+#
+# sns.barplot(data=df, x='month', y='sales', ax=ax[2], estimator=np.sum)
+# ax[2].set_title("Суммарные продажи по месяцам")
+# plt.show()
+
+#============================================
+# import matplotlib.pyplot as plt
+# import pandas as pd
+# import seaborn as sns
+# import numpy as np
+
+# n_rows = 1000
+# data_marketing = pd.DataFrame({
+#     'Source': np.random.choice(['Google Ads', 'Target Ads', 'Influenxers'], n_rows, p=[0.5, 0.3, 0.2]),
+#     'Lifetime_Months': np.random.geometric(p=0.25, size=n_rows)
+# })
+#
+# print(data_marketing)
+# data_marketing['Lifetime_Months'] = data_marketing['Lifetime_Months'].clip(upper=12)
+#
+# plt.figure(figsize=[10, 5])
+# sns.set_theme(style="whitegrid")
+#
+# sns.kdeplot(data=data_marketing, x="Lifetime_Months", hue="Source", fill=True, alpha=0.4, linewidth=2)
+# plt.title("Как быстро уходят клиенты в зависимости от рекламного источника")
+#
+# plt.xlabel("Месяцы с момента первой покупки(Lifetime)")
+# plt.ylabel("Плотность (доля клиентов)")
+# plt.xlim(1, 12)
+# plt.show()
+
+#========================
+# import matplotlib.pyplot as plt
+# import pandas as pd
+# import seaborn as sns
+# import numpy as np
+#
+# days = ['Пн','Вт','Ср', 'Чт', 'Пт','Сб', 'Вс']
+# hours = [f"{h:02d}:00" for h in range(8, 23)]
+# grid = []
+#
+# for day in days:
+#     for hour in hours:
+#         base_orders = np.random.randint(20, 60)
+#         if day in ['Пт','Сб'] and int(hour[:2]) >= 18:
+#             base_orders += 80
+#         if day in ['Сб', 'Вс'] and 12 <= int(hour[:2]) <= 15:
+#             base_orders += 60
+#
+#         grid.append({"Day": day, "Hour": hour, "Orders": base_orders})
+#
+# df_orders = pd.DataFrame(grid)
+#
+# pivot_orders = df_orders.pivot(index='Day', columns='Hour', values='Orders').reindex(days)   # сортировка в виде таблицы
+# print(pivot_orders)
+#
+# plt.figure(figsize=(12, 5))
+#
+# sns.heatmap(pivot_orders, annot=True, cmap="YlOrRd", fmt="d", linewidths=.5, cbar_kws={"label": 'Количество заказов'})
+# plt.title("Почасовая интенсивность заказов в течении недели", fontsize=14, pad=15)
+# plt.xlabel("Час суток", fontsize=12)
+# plt.ylabel("День недели", fontsize=12)
+# plt.xticks(rotation=30)
+# plt.tight_layout()
+# plt.show()
+
+# plt.show()
+
+# #===============================
+# import matplotlib.pyplot as plt
+# import pandas as pd
+# import seaborn as sns
+# import numpy as np
+#
+# n_users = 400
+# data_ab = pd.DataFrame({
+#     "Group": np.random.choice(["A (Старый)", "B (Новый)"], n_users, p=[0.5, 0.5]),   # p = общее должно быть = 1
+#     "OS": np.random.choice(['IOS', 'Android'], n_users, p=[0.4, 0.6]),
+#     "Session_Duration": np.random.normal(loc=12, scale=4, size=n_users),
+# })
+#
+# data_ab.loc[data_ab["Group"] == "B (Новый)", "Session_Duration"] += 2.5
+#
+# plt.figure(figsize=[10, 6])
+# sns.violinplot(data=data_ab, x="Group", y="Session_Duration", hue="OS", split=True, inner="quart", palette="muted")    # самая широкая часть в медиане, на нее смотрим
+#
+# plt.title("Результаты А/В теста: длительность сесии по группам и ОС", fontsize=14, pad=10)
+# plt.xlabel("Группа теста")
+# plt.ylabel("Длительность сессии в минутах")
+# plt.grid()
+# plt.show()
+
+
+#====================
+
+# import matplotlib.pyplot as plt
+# import pandas as pd
+# import seaborn as sns
+# import numpy as np
+#
+# n_borrowers = 2000
+# jobs = ["Freelance", "state Employee", "Corporate", "Business Owner"]
+#
+# df_credit = pd.DataFrame({
+#     "Employment": np.random.choice(jobs, n_borrowers, p=[0.2, 0.3, 0.4, 0.1]),
+#     "Credit_Score": np.random.normal(loc=650, scale=70, size=n_borrowers),
+# })
+#
+# df_credit.loc[df_credit["Employment"] == "Corporate", "Credit_Score"] += 45
+# df_credit.loc[df_credit["Employment"] == "Freelance", "Credit_Score"] -= 30
+# df_credit["Credit_Score"] = df_credit["Credit_Score"].clip(300, 850)
+#
+# print(df_credit.head())
+#
+# plt.figure(figsize=(10,6))
+#
+# sns.boxenplot(data=df_credit, x="Employment", y="Credit_Score", palette="coolwarm", hue="Employment")
+# plt.title("распределение кредитного рейтинга заемщиков по типам занятости")
+# plt.xlabel("Тип занятости")
+# plt.ylabel("кредитный рейтинг")
+# plt.show()
+#=======================================
 # ДЗ
 
 # import matplotlib.pyplot as plt
@@ -3637,14 +3884,53 @@ import a
 # plt.show()
 
 
-import matplotlib.pyplot as plt
-import seaborn as sns
+# import matplotlib.pyplot as plt
+# import seaborn as sns
+#
+# brands = ['Apple', 'Samsung', 'Xiaomi', 'Другие']
+# market_share = [30, 25, 20, 25]
+#
+# plt.figure(figsize=(7, 7))
+# plt.pie(market_share, labels=brands, autopct='%1.1f%%', colors=['#4f46e5', '#10b981', '#06b6d4', '#f59e0b'])
+#
+# plt.title("Доли рынка брендов смартфонов", fontsize=14)
+# plt.show()
 
-brands = ['Apple', 'Samsung', 'Xiaomi', 'Другие']
-market_share = [30, 25, 20, 25]
+#=========================
+# ДЗ
+#
+# import matplotlib.pyplot as plt
+# import pandas as pd
+# import seaborn as sns
+# import numpy as np
 
-plt.figure(figsize=(7, 7))
-plt.pie(market_share, labels=brands, autopct='%1.1f%%', colors=['#4f46e5', '#10b981', '#06b6d4', '#f59e0b'])
+# tips = sns.load_dataset("tips")
+# print(tips.head())
+#
+# fig, axes = plt.subplots(figsize=(10,6))
+#
+# sns.scatterplot(data=tips, x='total_bill', y='tip', hue='sex', ax=axes)
+# axes.set_title("Рассеяние: счет vs чаевые")
+#
+# plt.show()
+#
+# tips = sns.load_dataset("tips")
+# print(tips.head())
+#
+# fig, axes = plt.subplots(figsize=(10,6))
+#
+# sns.boxplot(data=tips, x='total_bill', y='smoker', ax=axes)
+# axes.set_title("Распределение общего счета: Курящие vs Некурящие")
+#
+#
+# plt.show()
 
-plt.title("Доли рынка брендов смартфонов", fontsize=14)
-plt.show()
+
+# iris = sns.load_dataset("iris")
+# print(iris.head())
+#
+# corr_matrix = iris.corr(numeric_only=True)
+#
+# sns.heatmap(corr_matrix, annot=True, cmap="coolwarm", fmt=".2f")
+# plt.title("Корреляционная матрица")
+# plt.show()

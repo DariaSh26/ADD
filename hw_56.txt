@@ -1,0 +1,52 @@
+Задача 1: Диаграмма рассеяния (Взаимосвязь чисел)
+Условие: Покажите взаимосвязь между общим счетом (total_bill) и оставленными чаевыми (tip). Подсветите точки разными цветами в зависимости от пола (sex) клиента. На основе датасета tips.
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+
+tips = sns.load_dataset("tips")
+print(tips.head())
+
+fig, axes = plt.subplots(figsize=(10,6))
+
+sns.scatterplot(data=tips, x='total_bill', y='tip', hue='sex', ax=axes)
+axes.set_title("Рассеяние: счет vs чаевые")
+
+plt.show()
+
+Задача 2: Ящик с усами (Распределение по категориям)
+Условие: Постройте график "ящик с усами" (boxplot), чтобы сравнить распределение общего счета (total_bill) между курящими (smoker) и некурящими клиентами. На основе датасета tips.
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+tips = sns.load_dataset("tips")
+print(tips.head())
+
+fig, axes = plt.subplots(figsize=(10,6))
+
+sns.boxplot(data=tips, x='total_bill', y='smoker', ax=axes)
+axes.set_title("Распределение общего счета: Курящие vs Некурящие")
+
+
+plt.show()
+
+
+Задача 3: Матрица корреляции и Тепловая карта (heatmap)
+Условие: Найдите корреляцию между всеми числовыми признаками в датасете iris и визуализируйте её в виде тепловой карты. Выведите коэффициенты корреляции внутри ячеек и используйте контрастную цветовую палитру (например, coolwarm).
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+iris = sns.load_dataset("iris")
+print(iris.head())
+
+corr_matrix = iris.corr(numeric_only=True)
+
+sns.heatmap(corr_matrix, annot=True, cmap="coolwarm", fmt=".2f")
+plt.title("Корреляционная матрица")
+plt.show()
+
+
+
