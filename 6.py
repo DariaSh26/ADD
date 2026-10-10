@@ -3934,3 +3934,176 @@ import a
 # sns.heatmap(corr_matrix, annot=True, cmap="coolwarm", fmt=".2f")
 # plt.title("Корреляционная матрица")
 # plt.show()
+
+#=======================
+# Занятие 17
+
+# import plotly.express as px
+# from plotly.graph_objs.violin import selected
+
+# data = {
+#     "Месяц": ['Янв', 'Фев', 'Мар', 'Апр'],
+#     "Температура": [-5, -3, 2, 10]
+# }
+#
+# fig = px.line(data, x="Месяц", y="Температура", title="Средняя температура")
+# # fig.show()
+# # fig.write_html("temperature.html")
+# fig.write_image("temperature.png")
+
+# data = {
+#     "Категория": ['Продукты', 'Транспорт', 'Развлечения'],
+#     "Расходы": [5000, 3000, 2000]
+# }
+#
+# fig = px.bar(data, x="Категория", y="Расходы", title="Развлечения", color="Категория", color_discrete_map={'Продукты': "orange",
+# 'Транспорт': "green", 'Развлечения': "yellow"})
+# fig.update_traces(textposition='inside', texttemplate='%{y}Руб')
+# fig.show()
+
+# fig = px.funnel_area(names=['A','B','C'], values=[10, 20, 30], title="Площадь воронки")
+# fig.show()
+
+# df = px.data.iris()
+#
+# # fig = px.scatter(df, x="sepal_width", y="sepal_length", color="species", title="Точечный график")
+# # fig = px.scatter_3d(df, x="sepal_width", y="sepal_length", z="petal_length", color="species", title="3D Точечный график")
+# # fig = px.scatter_polar(df, x="sepal_length", y="sepal_width", color="species", title="Полярный график")
+# fig = px.scatter_ternary(df, a="sepal_length", b="sepal_width", c="petal_length", color="species", title="Тернарный график")
+# ig.show()
+
+# df = px.data.gapminder()
+#
+# fig = px.scatter_geo(df, locations="iso_alpha", color="continent", hover_name="country", size="pop", projection="natural earth", title="Географический график")
+#
+# fig.show()
+
+# df = px.data.gapminder()
+# fig = px.area(df, x="year", y="pop", color="continent", title="График областей")
+# fig.show()
+
+# df = px.data.gapminder()
+# fig = px.bar_polar(df, r="pop", theta="continent", color="continent",title="Полярный столбчатый график")
+# fig.show()
+
+# df = px.data.gapminder()
+# fig = px.box(df, x="continent", y="lifeExp", color="continent", title="Коробчатый график")
+# fig.show()
+
+# df = px.data.gapminder()
+#
+# selected_year = 2007
+# df_year = df[df['year'] == selected_year]
+# df_continent = df_year.groupby('continent').agg({'pop': 'sum'}).reset_index()
+# df_continent['percentage'] = (df_continent['pop'] / df_continent['pop'].sum()) * 100
+#
+# fig = px.pie(df_continent, values='pop', names='continent', title=f'Рсапределение населения по континентам в {selected_year} году',
+#              color='continent', color_discrete_sequence=px.colors.qualitative.Set3, hole=0.3, labels={'continent': "Континент", 'pop':'Население'})
+#
+# fig.update_traces(textposition='inside', textinfo='perсent+label')
+# fig.update_layout(showlegend=True, legend_title_text="Континент", margin=dict(l=20, r=20, t=80, b=20))
+# fig.show()
+
+# df = px.data.gapminder()
+# fig = px.sunburst(df, path=['continent', 'country'], values = 'pop', title='Круговая иерархия')
+# fig.show()
+
+# df = px.data.gapminder()
+# selected_year = 2007
+# df_year = df[df['year'] == selected_year]
+# print(df_year.head())
+#
+# fig = px.treemap(df_year, path=['continent', 'country'], values='pop', color='lifeExp', hover_data=['gdpPercap'], color_continuous_scale='RdBu', title=f'Иерархическое дерево населения по странама и континентам в {selected_year} году')
+# fig.update_layout(margin=dict(t=50, r=25, l=25, b=25))
+# fig.show()
+
+# df = px.data.gapminder().query("year == 2007")
+#
+# fig = px.choropleth(df, locations="iso_alpha", color="gdpPercap", hover_name="country",
+#                     color_continuous_scale=px.colors.sequential.YlOrRd)
+#
+# fig.update_layout(title="World GPA per Capite (2007)", geo_scope="usa")
+#
+# fig.show()
+
+#=====================
+#ДЗ
+
+# import plotly.express as px
+#
+#
+# df = px.data.gapminder()
+#
+# df_canada = df[df['country'] == 'Canada']
+# fig = px.bar(df_canada, x='year', y='pop', title='Динамика изменения численности населения Канады по годам', labels={'year': 'Год', 'pop': 'Население'})
+# fig.show()
+
+
+# df = px.data.tips()
+#
+# fig = px.sunburst(df, path=['day', 'time', 'smoker'], values='total_bill', title='Иерархическая структура чаевых')
+#
+# fig.show()
+
+#=====================
+# import plotly.express as px
+# import pandas as pd
+
+#
+# data = {
+#     'Event': [
+#         'Начало второй мировой войны',
+#         'Распад СССР',
+#         'Первый человек в космосе',
+#         'Создание интернета',
+#         'Введение евро',
+#         'начфло COVID-19 пандемии',
+#         'разработка вакцин против COVID-19'
+#     ],
+#     'Start': [
+#         '1939-09-01',
+#         '1990-03-11',
+#         '1964-04-12',
+#         '1983-09-01',
+#         '1999-01-01',
+#         '2020-01-01',
+    #     '2020-12-01',
+    # ],
+    # 'End': [
+    #     '1945-09-02',
+    #     '1991-12-25',
+    #     '1969-07-24',
+    #     '1990-01-01',
+    #     '1999-01-01',
+    #     '2023-01-01',
+    #     '2021-12-31'
+    # ],
+    # 'Category': [
+    #     'Война',
+    #     'Политика',
+    #     'Космос',
+    #     'Технологии',
+    #     'Экономика',
+    #     'Здоровье',
+    #     'Здоровье'
+    # ],
+    # 'Description': [
+    #     'Второй мировой конфликт, начавшийся с нападения Германии на Польшу',
+#         'Событие, символизирующее конец Холодной войны',
+#         'Нил Амстронг стал первым человеком ступившим на луну',
+#         'Начало разработки глобальной сети связи',
+#         'Введение единой валюты во многих европейских странах',
+#         'Глобальная пандемия вызванная вирусом',
+#         "Создание и внедрение вакцины для борьбы с COVID-19"
+#     ]
+#
+# }
+#
+# df = pd.DataFrame(data)
+#
+# df['Start'] = pd.to_datetime(df['Start'])
+# df['End'] = pd.to_datetime(df['End'])
+#
+# fig = px.timeLine(df, x_start='Start', x_end='End', y='Event')
+#
+# fig.show()
